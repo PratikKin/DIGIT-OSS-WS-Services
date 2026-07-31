@@ -6,9 +6,9 @@
 *.dylib
 *.test
 *.out
-main
-server
-app
+/main
+/server
+/app
 bin/
 dist/
 build/
