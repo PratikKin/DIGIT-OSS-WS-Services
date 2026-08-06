@@ -46,7 +46,7 @@ services:
 
   ws-services:
     build:
-      context: ./ws-services
+      context: ./municipal-services/ws-services
       dockerfile: deployments/Dockerfile
     container_name: ws-services
     restart: unless-stopped
@@ -70,7 +70,7 @@ services:
 
   ws-calculator:
     build:
-      context: ./ws-calculator
+      context: ./municipal-services/ws-calculator
       dockerfile: deployments/Dockerfile
     container_name: ws-calculator
     restart: unless-stopped

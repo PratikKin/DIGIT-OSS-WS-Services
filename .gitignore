@@ -35,7 +35,7 @@ go.work.sum
 *.cert
 *.crt
 secrets/
-!.env.example
+.env.example
 
 # Large archive and backup files (e.g. go service.zip)
 *.zip

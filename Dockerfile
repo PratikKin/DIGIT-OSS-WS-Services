@@ -36,107 +36,107 @@ WORKDIR /build
 COPY maven-settings.xml /build/maven-settings.xml
 
 # Each Java service: copy pom + src, package skipping tests.
-COPY egov-mdms-service/pom.xml egov-mdms-service/pom.xml
-COPY egov-mdms-service/src     egov-mdms-service/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-mdms-service/pom.xml clean package -DskipTests -B
+COPY core-services/egov-mdms-service/pom.xml egov-mdms-service/pom.xml
+COPY core-services/egov-mdms-service/src     egov-mdms-service/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-mdms-service/pom.xml clean package -DskipTests -B
 
-COPY egov-idgen/pom.xml egov-idgen/pom.xml
-COPY egov-idgen/src     egov-idgen/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-idgen/pom.xml clean package -DskipTests -B
+COPY core-services/egov-idgen/pom.xml egov-idgen/pom.xml
+COPY core-services/egov-idgen/src     egov-idgen/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-idgen/pom.xml clean package -DskipTests -B
 
-COPY egov-persister/pom.xml egov-persister/pom.xml
-COPY egov-persister/src     egov-persister/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-persister/pom.xml clean package -DskipTests -B
+COPY core-services/egov-persister/pom.xml egov-persister/pom.xml
+COPY core-services/egov-persister/src     egov-persister/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-persister/pom.xml clean package -DskipTests -B
 
-COPY egov-filestore/pom.xml egov-filestore/pom.xml
-COPY egov-filestore/src     egov-filestore/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-filestore/pom.xml clean package -DskipTests -B
+COPY core-services/egov-filestore/pom.xml egov-filestore/pom.xml
+COPY core-services/egov-filestore/src     egov-filestore/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-filestore/pom.xml clean package -DskipTests -B
 
-COPY egov-user/pom.xml egov-user/pom.xml
-COPY egov-user/src     egov-user/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-user/pom.xml clean package -DskipTests -B
+COPY core-services/egov-user/pom.xml egov-user/pom.xml
+COPY core-services/egov-user/src     egov-user/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-user/pom.xml clean package -DskipTests -B
 
-COPY egov-workflow-v2/pom.xml egov-workflow-v2/pom.xml
-COPY egov-workflow-v2/src     egov-workflow-v2/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-workflow-v2/pom.xml clean package -DskipTests -B
+COPY core-services/egov-workflow-v2/pom.xml egov-workflow-v2/pom.xml
+COPY core-services/egov-workflow-v2/src     egov-workflow-v2/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-workflow-v2/pom.xml clean package -DskipTests -B
 
-COPY egov-location/pom.xml egov-location/pom.xml
-COPY egov-location/src     egov-location/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-location/pom.xml clean package -DskipTests -B
+COPY core-services/egov-location/pom.xml egov-location/pom.xml
+COPY core-services/egov-location/src     egov-location/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-location/pom.xml clean package -DskipTests -B
 
-COPY egov-localization/pom.xml egov-localization/pom.xml
-COPY egov-localization/src     egov-localization/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-localization/pom.xml clean package -DskipTests -B
+COPY core-services/egov-localization/pom.xml egov-localization/pom.xml
+COPY core-services/egov-localization/src     egov-localization/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-localization/pom.xml clean package -DskipTests -B
 
-COPY property-services/pom.xml property-services/pom.xml
-COPY property-services/src     property-services/src
-RUN mvn -U -s /build/maven-settings.xml -f property-services/pom.xml clean package -DskipTests -B
+COPY municipal-services/property-services/pom.xml property-services/pom.xml
+COPY municipal-services/property-services/src     property-services/src
+RUN mvn -U -s /build/maven-settings.xml -f municipal-services/property-services/pom.xml clean package -DskipTests -B
 
-COPY pt-calculator-v2/pom.xml pt-calculator-v2/pom.xml
-COPY pt-calculator-v2/src     pt-calculator-v2/src
-RUN mvn -U -s /build/maven-settings.xml -f pt-calculator-v2/pom.xml clean package -DskipTests -B
+COPY municipal-services/pt-calculator-v2/pom.xml pt-calculator-v2/pom.xml
+COPY municipal-services/pt-calculator-v2/src     pt-calculator-v2/src
+RUN mvn -U -s /build/maven-settings.xml -f municipal-services/pt-calculator-v2/pom.xml clean package -DskipTests -B
 
 # --- Extra core services ----------------------------------------------------
-COPY egov-accesscontrol/pom.xml egov-accesscontrol/pom.xml
-COPY egov-accesscontrol/src     egov-accesscontrol/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-accesscontrol/pom.xml clean package -DskipTests -B
+COPY core-services/egov-accesscontrol/pom.xml egov-accesscontrol/pom.xml
+COPY core-services/egov-accesscontrol/src     egov-accesscontrol/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-accesscontrol/pom.xml clean package -DskipTests -B
 
-COPY egov-common-masters/pom.xml egov-common-masters/pom.xml
-COPY egov-common-masters/src     egov-common-masters/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-common-masters/pom.xml clean package -DskipTests -B
+COPY core-services/egov-common-masters/pom.xml egov-common-masters/pom.xml
+COPY core-services/egov-common-masters/src     egov-common-masters/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-common-masters/pom.xml clean package -DskipTests -B
 
-COPY egov-enc-service/pom.xml egov-enc-service/pom.xml
-COPY egov-enc-service/src     egov-enc-service/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-enc-service/pom.xml clean package -DskipTests -B
+COPY core-services/egov-enc-service/pom.xml egov-enc-service/pom.xml
+COPY core-services/egov-enc-service/src     egov-enc-service/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-enc-service/pom.xml clean package -DskipTests -B
 
-COPY egov-indexer/pom.xml egov-indexer/pom.xml
-COPY egov-indexer/src     egov-indexer/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-indexer/pom.xml clean package -DskipTests -B
+COPY core-services/egov-indexer/pom.xml egov-indexer/pom.xml
+COPY core-services/egov-indexer/src     egov-indexer/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-indexer/pom.xml clean package -DskipTests -B
 
-COPY egov-notification-mail/pom.xml egov-notification-mail/pom.xml
-COPY egov-notification-mail/src     egov-notification-mail/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-notification-mail/pom.xml clean package -DskipTests -B
+COPY core-services/egov-notification-mail/pom.xml egov-notification-mail/pom.xml
+COPY core-services/egov-notification-mail/src     egov-notification-mail/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-notification-mail/pom.xml clean package -DskipTests -B
 
-COPY egov-notification-sms/pom.xml egov-notification-sms/pom.xml
-COPY egov-notification-sms/src     egov-notification-sms/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-notification-sms/pom.xml clean package -DskipTests -B
+COPY core-services/egov-notification-sms/pom.xml egov-notification-sms/pom.xml
+COPY core-services/egov-notification-sms/src     egov-notification-sms/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-notification-sms/pom.xml clean package -DskipTests -B
 
-COPY egov-otp/pom.xml egov-otp/pom.xml
-COPY egov-otp/src     egov-otp/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-otp/pom.xml clean package -DskipTests -B
+COPY core-services/egov-otp/pom.xml egov-otp/pom.xml
+COPY core-services/egov-otp/src     egov-otp/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-otp/pom.xml clean package -DskipTests -B
 
-COPY egov-pg-service/pom.xml egov-pg-service/pom.xml
-COPY egov-pg-service/src     egov-pg-service/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-pg-service/pom.xml clean package -DskipTests -B
+COPY core-services/egov-pg-service/pom.xml egov-pg-service/pom.xml
+COPY core-services/egov-pg-service/src     egov-pg-service/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-pg-service/pom.xml clean package -DskipTests -B
 
-COPY egov-searcher/pom.xml egov-searcher/pom.xml
-COPY egov-searcher/src     egov-searcher/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-searcher/pom.xml clean package -DskipTests -B
+COPY core-services/egov-searcher/pom.xml egov-searcher/pom.xml
+COPY core-services/egov-searcher/src     egov-searcher/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-searcher/pom.xml clean package -DskipTests -B
 
-COPY egov-url-shortening/pom.xml egov-url-shortening/pom.xml
-COPY egov-url-shortening/src     egov-url-shortening/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-url-shortening/pom.xml clean package -DskipTests -B
+COPY core-services/egov-url-shortening/pom.xml egov-url-shortening/pom.xml
+COPY core-services/egov-url-shortening/src     egov-url-shortening/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/egov-url-shortening/pom.xml clean package -DskipTests -B
 
-COPY tenant/pom.xml tenant/pom.xml
-COPY tenant/src     tenant/src
-RUN mvn -U -s /build/maven-settings.xml -f tenant/pom.xml clean package -DskipTests -B
+COPY core-services/tenant/pom.xml tenant/pom.xml
+COPY core-services/tenant/src     tenant/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/tenant/pom.xml clean package -DskipTests -B
 
-COPY user-otp/pom.xml user-otp/pom.xml
-COPY user-otp/src     user-otp/src
-RUN mvn -U -s /build/maven-settings.xml -f user-otp/pom.xml clean package -DskipTests -B
+COPY core-services/user-otp/pom.xml user-otp/pom.xml
+COPY core-services/user-otp/src     user-otp/src
+RUN mvn -U -s /build/maven-settings.xml -f core-services/user-otp/pom.xml clean package -DskipTests -B
 
 # --- Business services ------------------------------------------------------
-COPY billing-service/pom.xml billing-service/pom.xml
-COPY billing-service/src     billing-service/src
-RUN mvn -U -s /build/maven-settings.xml -f billing-service/pom.xml clean package -DskipTests -B
+COPY business-services/billing-service/pom.xml billing-service/pom.xml
+COPY business-services/billing-service/src     billing-service/src
+RUN mvn -U -s /build/maven-settings.xml -f business-services/billing-service/pom.xml clean package -DskipTests -B
 
-COPY collection-services/pom.xml collection-services/pom.xml
-COPY collection-services/src     collection-services/src
-RUN mvn -U -s /build/maven-settings.xml -f collection-services/pom.xml clean package -DskipTests -B
+COPY business-services/collection-services/pom.xml collection-services/pom.xml
+COPY business-services/collection-services/src     collection-services/src
+RUN mvn -U -s /build/maven-settings.xml -f business-services/collection-services/pom.xml clean package -DskipTests -B
 
-COPY egov-apportion-service/pom.xml egov-apportion-service/pom.xml
-COPY egov-apportion-service/src     egov-apportion-service/src
-RUN mvn -U -s /build/maven-settings.xml -f egov-apportion-service/pom.xml clean package -DskipTests -B
+COPY business-services/egov-apportion-service/pom.xml egov-apportion-service/pom.xml
+COPY business-services/egov-apportion-service/src     egov-apportion-service/src
+RUN mvn -U -s /build/maven-settings.xml -f business-services/egov-apportion-service/pom.xml clean package -DskipTests -B
 
 
 # -----------------------------------------------------------------------------
@@ -146,13 +146,13 @@ FROM golang:1.26-alpine AS go-build
 RUN apk add --no-cache git ca-certificates
 WORKDIR /src
 
-COPY ws-services/ ./ws-services/
+COPY municipal-services/ws-services/ ./ws-services/
 WORKDIR /src/ws-services
 RUN CGO_ENABLED=0 GOOS=linux go build -buildvcs=false -ldflags="-s -w" \
         -o /out/ws-services ./cmd/ws-services
 
 WORKDIR /src
-COPY ws-calculator/ ./ws-calculator/
+COPY municipal-services/ws-calculator/ ./ws-calculator/
 WORKDIR /src/ws-calculator
 RUN CGO_ENABLED=0 GOOS=linux go build -buildvcs=false -ldflags="-s -w" \
         -o /out/ws-calculator ./cmd/ws-calculator
@@ -163,9 +163,9 @@ RUN CGO_ENABLED=0 GOOS=linux go build -buildvcs=false -ldflags="-s -w" \
 # -----------------------------------------------------------------------------
 FROM node:10-buster-slim AS node-build
 WORKDIR /app
-COPY pdf-service/package.json ./
+COPY core-services/pdf-service/package.json ./
 RUN npm install --no-audit --no-fund || true
-COPY pdf-service/ ./
+COPY core-services/pdf-service/ ./
 RUN npm run build || true
 
 
