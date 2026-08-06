@@ -89,3 +89,4 @@ EGOV_USER_DEPLOYMENT_GUIDE.md
 # Scripts not needed for deployment
 fix-postgres.sh
 local-deploy/
+postman/
